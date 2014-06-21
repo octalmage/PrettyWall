@@ -1,7 +1,7 @@
 PrettyWall
 ==========
 
-Have your wallpaper match the latest color from prettycolors.tumblr.com. 
+Have your wallpaper match the latest color from http://prettycolors.tumblr.com. 
 
 Old Windows version here: http://code.google.com/p/prettywall
 
