@@ -14,7 +14,7 @@ var wallpaper = require("wallpaper");
 require("crash-reporter").start();
 
 //Load consumer_key from config.json.
-var config = JSON.parse(fs.readFileSync("config.json", "utf8"));
+var config = JSON.parse(fs.readFileSync(__dirname + "/config.json", "utf8"));
 
 var client = new tumblr.Client(
 {
@@ -30,6 +30,8 @@ if (process.platform === "darwin")
 var mainWindow = null;
 
 var appIcon = null;
+
+var fileName = __dirname + "/.temp.png";
 
 app.on("ready", function()
 {
@@ -70,9 +72,9 @@ function updateWallpaper()
 	{
 		download(data.posts[0].photos[0].original_size.url, function()
 		{
-			wallpaper.set(".temp.png").then(function()
+			wallpaper.set(fileName).then(function()
 			{
-				fs.unlink(".temp.png");
+				fs.unlink(fileName);
 				console.log("Wallpaper Updated.");
 			});
 		});
@@ -81,7 +83,7 @@ function updateWallpaper()
 
 function download(url, callback)
 {
-	var file = fs.createWriteStream(".temp.png");
+	var file = fs.createWriteStream(fileName);
 	var request = http.get(url, function(response)
 	{
 		response.pipe(file);
