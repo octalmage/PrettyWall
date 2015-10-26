@@ -8,7 +8,7 @@
     "wallpaper": "^2.1.0"
   },
   "scripts": {
-      "build": "electron-packager ./ PrettyWall --out=build --ignore=build --all --version=0.34.0 --overwrite"
+      "build": "electron-packager ./ PrettyWall --out=build --ignore=build --platform=darwin --arch=x64 --icon=icon.icns --version=0.34.0 --overwrite"
   },
   "repository": {
     "type": "git",
