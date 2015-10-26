@@ -1,0 +1,25 @@
+{
+  "name": "prettywall",
+  "version": "0.0.1",
+  "main": "main.js",
+  "description": "Set wallpaper to latest color from prettycolors.tumblr.com.",
+  "dependencies": {
+    "tumblr.js": "0.0.5",
+    "wallpaper": "^2.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/octalmage/PrettyWall.git"
+  },
+  "keywords": [
+    "colors",
+    "wallpaper",
+    "pretty"
+  ],
+  "author": "Jason Stallings",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/octalmage/PrettyWall/issues"
+  },
+  "homepage": "https://github.com/octalmage/PrettyWall#readme"
+}
