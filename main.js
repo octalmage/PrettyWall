@@ -42,7 +42,7 @@ app.on("ready", function()
 
 	updateWallpaper();
 
-	appIcon = new Tray("tray.png");
+	appIcon = new Tray(__dirname + "/tray.png");
 
 	var contextMenu = Menu.buildFromTemplate([
 
