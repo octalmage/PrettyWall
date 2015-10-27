@@ -75,7 +75,6 @@ function updateWallpaper()
 		{
 			wallpaper.set(fileName).then(function()
 			{
-				fs.unlink(fileName);
 				console.log("Wallpaper Updated.");
 			});
 		});
@@ -84,6 +83,19 @@ function updateWallpaper()
 
 function download(url, callback)
 {
+	//Try to delete previously downloaded file.
+	if (fileName)
+	{
+		try 
+		{
+			fs.unlink(fileName);
+		}
+		catch (error)
+		{
+			console.log(error);
+		}
+	}
+	
 	var baseName = path.basename(url);
 	fileName = __dirname + "/" + baseName;
 	var file = fs.createWriteStream(fileName);
