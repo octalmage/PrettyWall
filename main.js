@@ -72,6 +72,7 @@ function updateWallpaper()
 {
 	client.posts("prettycolors.tumblr.com", function(error, data)
 	{
+		//TODO: Only download/update if the color has changed.
 		download(data.posts[0].photos[0].original_size.url, function()
 		{
 			wallpaper.set(fileName).then(function()
