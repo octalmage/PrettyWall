@@ -3,6 +3,7 @@ var Menu = require("menu");
 var Tray = require("tray");
 var http = require("http");
 var fs = require("fs");
+var path = require("path");
 var tumblr = require("tumblr.js");
 var v8 = require("v8");
 
@@ -31,7 +32,7 @@ var mainWindow = null;
 
 var appIcon = null;
 
-var fileName = __dirname + "/.temp.png";
+var fileName;
 
 app.on("ready", function()
 {
@@ -83,6 +84,8 @@ function updateWallpaper()
 
 function download(url, callback)
 {
+	var baseName = path.basename(url);
+	fileName = __dirname + "/" + baseName;
 	var file = fs.createWriteStream(fileName);
 	var request = http.get(url, function(response)
 	{
