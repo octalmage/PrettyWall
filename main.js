@@ -36,6 +36,7 @@ var fileName;
 
 app.on("ready", function()
 {
+	//Update wallpaper every 10 minutes.
 	setInterval(function()
 	{
 		updateWallpaper();
