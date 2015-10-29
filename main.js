@@ -66,6 +66,12 @@ app.on("ready", function()
 	]);
 	appIcon.setToolTip("PrettyWall");
 	appIcon.setContextMenu(contextMenu);
+	
+	//Support right clicking the tray icon.
+	appIcon.on("right-clicked", function(event, bounds)
+	{
+		appIcon.popUpContextMenu();
+	});
 });
 
 function updateWallpaper()
