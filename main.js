@@ -74,6 +74,9 @@ app.on("ready", function()
 	});
 });
 
+/**
+ * Get the latest color from prettycolors and pass it to the download function.
+ */
 function updateWallpaper()
 {
 	client.posts("prettycolors.tumblr.com", function(error, data)
