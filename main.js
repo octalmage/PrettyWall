@@ -98,6 +98,11 @@ function updateWallpaper()
 	});
 }
 
+/**
+ * Download a URL and save it to disk.
+ * @param  {string}   url      URL to download.
+ * @param  {Function} callback Function to call when the download is finished.
+ */
 function download(url, callback)
 {
 	//Try to delete previously downloaded file.
