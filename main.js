@@ -87,6 +87,7 @@ function updateWallpaper()
 			return;
 		}
 		
+		var newColor = data.posts[0].caption.replace(/<\/?p>/gi, "");
 		//TODO: Only download/update if the color has changed.
 		download(data.posts[0].photos[0].original_size.url, function()
 		{
