@@ -16,6 +16,7 @@ require("crash-reporter").start();
 
 //Load consumer_key from config.json.
 var config = JSON.parse(fs.readFileSync(__dirname + "/config.json", "utf8"));
+var currentColor;
 
 var client = new tumblr.Client(
 {
@@ -88,6 +89,7 @@ function updateWallpaper()
 		}
 		
 		var newColor = data.posts[0].caption.replace(/<\/?p>/gi, "");
+		currentColor = newColor;
 		//TODO: Only download/update if the color has changed.
 		download(data.posts[0].photos[0].original_size.url, function()
 		{
