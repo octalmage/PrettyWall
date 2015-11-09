@@ -89,6 +89,11 @@ function updateWallpaper()
 		}
 		
 		var newColor = data.posts[0].caption.replace(/<\/?p>/gi, "");
+		if (newColor === currentColor)
+		{
+			return;
+		}
+		
 		currentColor = newColor;
 		//TODO: Only download/update if the color has changed.
 		download(data.posts[0].photos[0].original_size.url, function()
