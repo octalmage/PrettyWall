@@ -88,7 +88,9 @@ function updateWallpaper()
 			return;
 		}
 		
+		//Strip p tag from the caption.
 		var newColor = data.posts[0].caption.replace(/<\/?p>/gi, "");
+		//Return if the color hasn't changed.
 		if (newColor === currentColor)
 		{
 			return;
