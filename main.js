@@ -90,6 +90,7 @@ function updateWallpaper()
 		
 		//Strip p tag from the caption.
 		var newColor = data.posts[0].caption.replace(/<\/?p>/gi, "");
+		
 		//Return if the color hasn't changed.
 		if (newColor === currentColor)
 		{
@@ -97,6 +98,7 @@ function updateWallpaper()
 		}
 		
 		currentColor = newColor;
+		
 		//TODO: Only download/update if the color has changed.
 		download(data.posts[0].photos[0].original_size.url, function()
 		{
